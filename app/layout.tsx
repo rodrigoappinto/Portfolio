@@ -1,6 +1,7 @@
 import "./globals.css"
 import SideBar from "./SideBar/page"
 import SmallSideBar from "./SmallSideBar/page"
+import { Analytics } from '@vercel/analytics/react';
 
 export default function RootLayout({
   children,
@@ -15,6 +16,7 @@ export default function RootLayout({
           <SideBar/>
           <main className="w-full h-full">
             {children}
+          <Analytics />
           </main>
         </div>
         <div className="flex justify-end bg-[#F3EEEA]">

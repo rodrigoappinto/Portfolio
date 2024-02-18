@@ -13,7 +13,7 @@ export default function SideBar() {
             <div className="w-1/8 text-[#726455]">
                 <Link href="/" >
                 <div onClick={() => router.refresh()}className="w-full h-24 mt-24 flex text-center items-center justify-center bg-[#F3EEEA] ">
-                    <div className="w-1/3 text-center">
+                    <div className="w-fit text-center">
                         Pinto Digital Journal
                     </div>
                     {/* <div>
