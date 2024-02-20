@@ -10,7 +10,7 @@ export default function WelcomingPage() {
   return (
     <motion.div className="h-screen w-full flex flex-col items-center justify-center" ref={constraintsRef}>
       <motion.div className='flex relative items-center justify-center'>
-        <motion.div className="text-right text-2xl sm:text-5xl lg:text-9xl" drag dragConstraints={constraintsRef} dragTransition={{ bounceStiffness: 100  , bounceDamping: 10 }} onDrag={() => setIsVisible(false)}>
+        <motion.div className="text-right text-4xl sm:text-7xl lg:text-9xl" drag dragConstraints={constraintsRef} dragTransition={{ bounceStiffness: 100  , bounceDamping: 10 }} onDrag={() => setIsVisible(false)}>
           WelcoMe!
         </motion.div>
         {/* <motion.div className="h-[150px] w-[150px] text-left text-9xl">
@@ -26,7 +26,7 @@ export default function WelcomingPage() {
         }
         </motion.div> */}
       </motion.div>
-      <motion.div className="text-xs sm:text-sm lg:text-xl text-center" drag dragConstraints={constraintsRef} dragTransition={{ bounceStiffness: 100  , bounceDamping: 10 }}>
+      <motion.div className="text-sm sm:text-base lg:text-xl text-center" drag dragConstraints={constraintsRef} dragTransition={{ bounceStiffness: 100  , bounceDamping: 10 }}>
         my name is rodrigo pinto <br></br> i am a photographer, and this is my portfolio :)
       </motion.div>
     </motion.div>

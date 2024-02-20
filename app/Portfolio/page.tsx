@@ -21,7 +21,7 @@ export default async function PhotoPortfolio() {
                 </div>
 
                 <div className="w-full flex items-center justify-center text-center sm:text-base text-xs my-4">
-                        <p>(: Proudly created by myself for my family, girlfriend, and friends! :)</p>
+                        <p>(: Proudly created by myself for my family, and friends! :)</p>
                 </div>
 
             </div>
