@@ -12,7 +12,7 @@ export default async function PhotoPortfolio() {
     return (
             <div className="p-8">
 
-                <div className="z-99 w-full flex flex-wrap items-center justify-center gap-3 mt-4">
+                <div className="z-99 w-full flex flex-wrap items-center justify-center gap-3 mt-4 ">
 
                     {photosUrls.map((url, i) => (
                         url !== undefined && <PorfolioItem key={i} data={url}/>))

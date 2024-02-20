@@ -11,7 +11,7 @@ export default function SideBar() {
 
     return (
         <div>
-            <div className="fixed h-9 w-full flex items-center justify-center gap-x-5 sm:hidden pr-[0.01rem]" >
+            <div className="fixed bg-[#F3EEEA] h-11 w-full flex items-center justify-center gap-x-5 sm:hidden pr-[0.01rem]" >
                 <Link href="/Portfolio">
                     <SideBarButton name="PoRtFoLio"/>
                 </Link>
