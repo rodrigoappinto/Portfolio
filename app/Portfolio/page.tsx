@@ -13,11 +13,10 @@ export default async function PhotoPortfolio() {
             <div className="p-8">
 
                 <div className="z-99 w-full flex flex-wrap items-center justify-center gap-3 mt-4 ">
-
                     {photosUrls.map((url, i) => (
                         url !== undefined && <PorfolioItem key={i} data={url}/>))
                     }
-
+            
                 </div>
 
                 <div className="w-full flex items-center justify-center text-center sm:text-base text-xs my-4">

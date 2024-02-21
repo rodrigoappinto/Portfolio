@@ -1,7 +1,9 @@
+import { Suspense } from "react";
 import "./globals.css"
 import SideBar from "./SideBar/page"
 import SmallSideBar from "./SmallSideBar/page"
 import { Analytics } from '@vercel/analytics/react';
+import Loading from "./loading";
 
 export default function RootLayout({
   children,
@@ -15,7 +17,7 @@ export default function RootLayout({
           <SmallSideBar/>
           <SideBar/>
           <main className="w-full h-full">
-            {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
           <Analytics />
           </main>
         </div>
