@@ -12,6 +12,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>Pinto Digital Journal</title>
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+      </head>
       <body>
         <div className="sm:flex sm:flex-row flex flex-col font-MajorMonoDisplay text-[#776B5D] bg-[#F3EEEA]">
           <SmallSideBar/>
