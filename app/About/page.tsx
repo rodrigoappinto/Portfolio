@@ -6,16 +6,17 @@ export default function page() {
     <div className="h-screen sm:h-screen w-full flex flex-col justify-center items-center text-center p-3">
       
       <p> !hello!</p>
-      <p>I am a computer science engineer majored in Artificial intelligence with a great love for photography!</p>
+      <p>I aM a coMputer science engineer Majored in Artificial intelligence with a great love for photography!</p>
       <br/>
       <p> this is the gear that i use:</p>
       <p> sony α6400</p>
       <p> sony 35 f/1.8 OSS</p>
-      <p> dji mini 2</p>
+      <p> iphone 13 pRo MaX</p>
+      <p> dji Mini 2</p>
       <br/>
       <br/>
       <br/>
-      <p> Thank you for taking some time to have a look at my portfolio and feel free to reach out to me on social media!</p>
+      <p> Thank you for taking soMe tiMe to have a look at My portfolio and feel free to reach out to Me on social Media!</p>
       <div className="w-full flex justify-center items-center mr-5">
         <Link  href="https://www.instagram.com/pintodigitaljournal/?next=%2F">               
           <svg width="50" height="50" viewBox="0 0 145 145" fill="none" xmlns="http://www.w3.org/2000/svg">

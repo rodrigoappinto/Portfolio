@@ -27,7 +27,7 @@ export default function WelcomingPage() {
         </motion.div> */}
       </motion.div>
       <motion.div className="text-sm sm:text-base lg:text-xl text-center" drag dragConstraints={constraintsRef} dragTransition={{ bounceStiffness: 100  , bounceDamping: 10 }}>
-        my name is rodrigo pinto <br></br> i am a photographer, and this is my portfolio :)
+        My naMe is rodrigo pinto <br></br> i aM a photographer, and this is My portfolio :)
       </motion.div>
     </motion.div>
   )
