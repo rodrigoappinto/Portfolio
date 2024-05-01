@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Photography Portfolio
 
-## Getting Started
+Hello Everyone!
+My name is Rodrigo Pinto, I am a AI/ML Engineer that loves to do Landscape/Human Nature photography for a hobby! 🏔️ 📷 🌳
+I developed this portfolio in order to showcase my work to family, friends and, now that is live, also all of you! :D
 
-First, run the development server:
+<img src="app/icon.jpg" width="250" height="200">
+
+### In the case you would like to replicate it for your own use case, feel free to use my code!
+
+This project was developed utilizing cutting-edge technologies for web development. For both the frontend and backend, Next.js 14 and Tailwind were employed. Supabase was additionally chosen as the main database for photo storage. The project was ultimately deployed on Vercel, ensuring a fast and handi real-time deployments when commiting to production on Github.
+
+Given that Next.js is designed to build full-stack applications, to run the application you only need to run one of the following commands:
 
 ```bash
+## For this example, I'll be using npm as my package manager. Of course, you can choose whichever tool you're most comfortable with.
+
+## Start by installing all the dependencies
+npm install
+
+## When that is done, you can finaly launch Next.js 14
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+In case you also want to replicate the usage of Supabase, please create a .env.local file and add you environment variables as followed:
+```bash
+SUPABASE_URL=YOUR_SUPABASE_URL
+SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+```
+Thank you for having a look at my portfolio it out and leave me a message in one of my socials if you enjoyed it!
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-- Rodrigo
