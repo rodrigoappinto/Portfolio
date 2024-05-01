@@ -2,7 +2,7 @@
 
 Hello Everyone!
 My name is Rodrigo Pinto, I am a AI/ML Engineer that loves to do Landscape/Human Nature photography for a hobby! 🏔️ 📷 🌳
-I developed this portfolio in order to showcase my work to family, friends and, now that is live, also all of you! :D
+I developed this portfolio in order to showcase my work to family, friends and, now that is live, also all of you! 😄
 
 <img src="app/icon.jpg" width="250" height="200">
 
@@ -30,4 +30,4 @@ SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 ```
 Thank you for having a look at my portfolio it out and leave me a message in one of my socials if you enjoyed it!
 
--- Rodrigo
+-- Rodrigo 🐥
