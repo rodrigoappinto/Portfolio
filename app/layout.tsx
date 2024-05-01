@@ -1,14 +1,21 @@
+import { Analytics } from "@vercel/analytics/react";
+import SmallSideBar from "./SmallSideBar/page";
+import localFont from "@next/font/local";
+import SideBar from "./SideBar/page";
 import { Suspense } from "react";
-import "./globals.css"
-import SideBar from "./SideBar/page"
-import SmallSideBar from "./SmallSideBar/page"
-import { Analytics } from '@vercel/analytics/react';
 import Loading from "./loading";
+import "./globals.css";
+
+// Font files can be colocated inside of `pages`
+const majorMono = localFont({
+  src: "../public/fonts/MajorMonoDisplayRegular.ttf",
+  variable: "--font-major",
+});
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -28,17 +35,15 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <div className="sm:flex sm:flex-row flex flex-col font-MajorMonoDisplay text-[#776B5D] bg-[#F3EEEA]">
-          <SmallSideBar/>
-          <SideBar/>
-          <main className="w-full h-full">
-          <Suspense fallback={<Loading />}>{children}</Suspense>
-          <Analytics />
-          </main>
-        </div>
-        <div className="flex justify-end bg-[#F3EEEA]">
+        <div className={`${majorMono.variable}`}>
+          <div className="flex select-none flex-col bg-[#F3EEEA] font-majorMono text-[#776B5D] sm:flex sm:flex-row">
+            <SmallSideBar />
+            <SideBar />
+            <Suspense fallback={<Loading />}>{children}</Suspense>
+            <Analytics />
+          </div>
         </div>
       </body>
     </html>
-  )
+  );
 }
