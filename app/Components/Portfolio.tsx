@@ -24,6 +24,16 @@ export default function Portfolio(props: any) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-y-hidden");
+    }
+    // Clean up function to remove the class when the component unmounts
+    return () => {
+      document.body.classList.remove("overflow-y-hidden");
+    };
+  }, [isOpen]);
+
   return (
     <div>
       <div className=" mt-4 flex h-full w-full flex-wrap items-center justify-center gap-3">
