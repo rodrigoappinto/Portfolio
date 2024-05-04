@@ -1,6 +1,6 @@
 function SideBarButton(props: any) {
   return (
-    <button className="py-2 hover:bg-[#B0A695] hover:text-[#F3EEEA] ">
+    <button className=" px-2 py-1 hover:bg-[#B0A695] hover:text-[#F3EEEA] ">
       {props.name}
     </button>
   );

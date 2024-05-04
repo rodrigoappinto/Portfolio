@@ -8,12 +8,12 @@ export default function SideBar() {
   const router = useRouter();
 
   return (
-    <div className="sticky top-0 z-0 hidden h-screen w-1/6 min-w-36 justify-center sm:visible sm:flex">
+    <div className="sticky top-0 hidden h-screen w-1/6 min-w-36 justify-center gap-y-0 sm:visible sm:flex">
       <div className="w-1/8">
         <Link href="/">
           <div
             onClick={() => router.refresh()}
-            className="mt-24 flex h-24 w-full flex-col items-center justify-center text-center align-middle"
+            className="mt-24 flex h-32 w-full flex-col items-center justify-center p-2 text-center align-middle sm:h-[8rem]"
           >
             <svg
               width="100"

@@ -8,14 +8,14 @@ import Link from "next/link";
 export default function SideBar() {
   return (
     <div>
-      <div className="fixed flex h-11 w-full items-center justify-center gap-x-5 bg-[#F3EEEA] pr-[0.01rem] sm:hidden">
+      <div className="fixed flex h-12 w-full items-center justify-center gap-x-5 bg-[#F3EEEA] pt-1 sm:hidden">
         <Link href="/PortfolioPage">
           <SideBarButton name="PoRtFoLio" />
         </Link>
         <Link href="/">
           <svg
-            width="55"
-            height="55"
+            width="65"
+            height="60"
             viewBox="0 0 974 649"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

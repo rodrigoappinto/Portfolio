@@ -24,9 +24,12 @@ export default async function PortfolioPage() {
       <div className="mt-10 flex flex-wrap items-center justify-center px-2 sm:mt-4">
         <Portfolio urls={photosUrls} />
       </div>
-      <div className="my-4 flex items-center justify-center gap-2 text-center text-xs sm:text-base">
+      <div className="mx-6 my-3 flex items-center justify-between gap-2 text-center text-xs sm:text-base">
         <p>(:</p>
-        <p>Proudly created by myself for my family, and friends!</p>
+        <p>
+          Proudly created by myself <br />
+          for my family, and friends!
+        </p>
         <p>:)</p>
       </div>
     </div>

@@ -27,7 +27,7 @@ export default function WelcomingPage() {
         dragConstraints={constraintsRef}
         dragTransition={{ bounceStiffness: 100, bounceDamping: 10 }}
       >
-        My naMe is rodrigo pinto <br></br> i aM a photographer, and this is My
+        My naMe is rodrigo pinto <br /> i aM a photographer, and this is My
         portfolio :)
       </motion.div>
     </motion.div>
