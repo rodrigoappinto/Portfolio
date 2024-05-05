@@ -27,7 +27,10 @@ export default function Portfolio(props: any) {
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("overflow-y-hidden");
+    } else {
+      document.body.classList.remove("overflow-y-hidden");
     }
+
     // Clean up function to remove the class when the component unmounts
     return () => {
       document.body.classList.remove("overflow-y-hidden");
