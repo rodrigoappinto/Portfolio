@@ -84,8 +84,11 @@ export default function Portfolio(props: any) {
                 </div>
                 <CarouselContent>
                   {Array.from({ length: props.urls.length }).map((_, index) => (
-                    <CarouselItem key={index}>
-                      <CardContent className="flex items-center justify-center p-1">
+                    <CarouselItem
+                      className="flex items-center justify-center p-1"
+                      key={index}
+                    >
+                      <CardContent>
                         <motion.img src={props.urls[index]} />
                       </CardContent>
                     </CarouselItem>
