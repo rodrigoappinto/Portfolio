@@ -1,31 +1,22 @@
-import { useState } from "react";
-import createSupabaseClient from "../db/supabase";
+import { storageRef } from "../db/firebase";
 import Portfolio from "../Components/Portfolio";
-import { unstable_noStore } from "next/cache";
+import { getDownloadURL, listAll } from "firebase/storage";
 
 export default async function PortfolioPage() {
-  const supabase = createSupabaseClient();
 
-  console.log(supabase);
-  unstable_noStore();
-  const { data } = await supabase.storage.from("Portfolio").list("", {
-    limit: 100,
-    offset: 0,
-    sortBy: { column: "name", order: "asc" },
-  });
+  let photosUrls: string[] = [];
+  
+  try {
+    const res = await listAll(storageRef);
+    const downloadPromises = res.items
+      .filter(itemRef => itemRef.name.endsWith('.jpg'))
+      .map(itemRef => getDownloadURL(itemRef));
 
-  console.log(data);
+    photosUrls = await Promise.all(downloadPromises);
+  } catch (error) {
+    console.error("Error fetching image URLs:", error);
+  }
 
-  const photosUrls: any = data
-    ?.map((item) => {
-      const result = supabase.storage.from("Portfolio").getPublicUrl(item.name);
-      if (result.data.publicUrl.endsWith(".jpg")) {
-        return result.data.publicUrl;
-      }
-    })
-    .filter((item) => item !== undefined);
-
-  console.log(photosUrls);
   return (
     <div className="h-full w-full">
       <div className="mt-10 flex flex-wrap items-center justify-center px-2 sm:mt-4">
