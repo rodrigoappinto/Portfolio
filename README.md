@@ -19,7 +19,7 @@ Given that Next.js is designed to build full-stack applications, to run the appl
 npm install
 
 ## When that is done, you can finaly launch Next.js 14
-npm run dev
+npm run dev 
 ```
 
 
