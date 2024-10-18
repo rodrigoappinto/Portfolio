@@ -21,7 +21,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Pinto Digital Journal</title>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
         <link
           rel="icon"
           href="/icon?<generated>"
