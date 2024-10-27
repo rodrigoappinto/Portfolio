@@ -23,7 +23,6 @@ export default function Portfolio(props: any) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   
-  console.log("size", props.data.length);
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("overflow-y-hidden");
@@ -93,9 +92,9 @@ export default function Portfolio(props: any) {
                       <CardContent>
                         <motion.img src={props.data[index].url} />
                       </CardContent>
-                      <div className="flex flex-col space-y-1  items-center justify-center">
-                        <div>{props.data[index].desc}</div>
-                        <div>{props.data[index].loc}</div>
+                      <div className="flex flex-col text-wrap text-center items-center justify-center">
+                        <p className="text-s">{props.data[index].desc}</p>
+                        <p className="text-xs">{props.data[index].loc}</p>
                       </div>
 
                     </CarouselItem>
