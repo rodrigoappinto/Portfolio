@@ -1,26 +1,26 @@
-import { storageRef } from "../db/firebase";
+import { db } from "../db/firebase";
 import Portfolio from "../Components/Portfolio";
-import { getDownloadURL, listAll } from "firebase/storage";
+import { collection, getDocs } from 'firebase/firestore';
 
 export default async function PortfolioPage() {
+  let data = [];
 
-  let photosUrls: string[] = [];
+  async function fetchData() {
+    const querySnapshot = await getDocs(collection(db, 'Portfolio')); 
+    const dataArray = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+        ...doc.data(),
+      }));
+      return dataArray.sort((a, b) => a.id > b.id ? 1 : -1);
+    };
   
-  try {
-    const res = await listAll(storageRef);
-    const downloadPromises = res.items
-      .filter(itemRef => itemRef.name.endsWith('.jpg'))
-      .map(itemRef => getDownloadURL(itemRef));
 
-    photosUrls = await Promise.all(downloadPromises);
-  } catch (error) {
-    console.error("Error fetching image URLs:", error);
-  }
-
+  data = await fetchData();
+  
   return (
     <div className="h-full w-full">
       <div className="mt-10 flex flex-wrap items-center justify-center px-2 sm:mt-4">
-        <Portfolio urls={photosUrls} />
+        <Portfolio data={data} />
       </div>
       <div className="mx-6 my-3 flex items-center justify-between gap-2 text-center text-xs sm:text-base">
         <p>(:</p>
