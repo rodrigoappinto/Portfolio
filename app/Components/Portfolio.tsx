@@ -9,7 +9,6 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi,
 } from "@/components/ui/carousel";
 
 const itemVariants: Variants = {
@@ -23,7 +22,8 @@ const itemVariants: Variants = {
 export default function Portfolio(props: any) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
-
+  
+  console.log("size", props.data.length);
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("overflow-y-hidden");
@@ -37,12 +37,13 @@ export default function Portfolio(props: any) {
     };
   }, [isOpen]);
 
+
   return (
     <div>
       <div className=" mt-4 flex h-full w-full flex-wrap items-center justify-center gap-3">
-        {props.urls.map(
-          (url: string, i: number) =>
-            url !== undefined && (
+        {props.data.map(
+          (image: {url: string}, i: number) => {
+            return image !== undefined && (
               <div
                 key={i}
                 onClick={() => {
@@ -50,14 +51,15 @@ export default function Portfolio(props: any) {
                   setCurrentImage(i);
                 }}
               >
-                <PhotoPreview url={url} />
+                <PhotoPreview url={image.url} />
               </div>
-            ),
+              );
+            }
         )}
       </div>
       {isOpen && (
         <motion.nav animate={isOpen ? "open" : "closed"}>
-          <div className="fixed inset-0 flex items-center justify-center bg-[#F3EEEA]/75">
+          <div className="fixed inset-0 flex items-center justify-center bg-[#F3EEEA]/90">
             <Carousel
               className="w-11/12 sm:w-3/4"
               opts={{
@@ -83,14 +85,19 @@ export default function Portfolio(props: any) {
                   </motion.svg>
                 </div>
                 <CarouselContent>
-                  {Array.from({ length: props.urls.length }).map((_, index) => (
+                  {Array.from({ length: props.data.length }).map((_, index) => (
                     <CarouselItem
-                      className="flex items-center justify-center p-1"
+                      className="flex flex-col space-y-0 items-center justify-center p-1"
                       key={index}
                     >
                       <CardContent>
-                        <motion.img src={props.urls[index]} />
+                        <motion.img src={props.data[index].url} />
                       </CardContent>
+                      <div className="flex flex-col space-y-1  items-center justify-center">
+                        <div>{props.data[index].desc}</div>
+                        <div>{props.data[index].loc}</div>
+                      </div>
+
                     </CarouselItem>
                   ))}
                 </CarouselContent>
