@@ -30,7 +30,7 @@ export default function Portfolio(props: any) {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
+      setIsMobile(window.innerWidth < 1000);
     };
 
     handleResize();
@@ -40,22 +40,22 @@ export default function Portfolio(props: any) {
   }, [isMobile]);
 
 
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     document.body.classList.add("overflow-y-hidden");
-  //   } else {
-  //     document.body.classList.remove("overflow-y-hidden");
-  //   }
+  useEffect(() => {
+    if (isOpen && !isMobile) {
+      document.body.classList.add("overflow-y-hidden");
+    } else {
+      document.body.classList.remove("overflow-y-hidden");
+    }
 
-  //   return () => {
-  //     document.body.classList.remove("overflow-y-hidden");
-  //   };
-  // }, [isOpen]);
+    return () => {
+      document.body.classList.remove("overflow-y-hidden");
+    };
+  }, [isOpen, isMobile]);
 
 
   return (
-    <div>
-      <div className=" mt-4 flex h-full w-full flex-wrap items-center justify-center gap-3">
+    <div className="my-5">
+      <div className="flex flex-wrap gap-2 justify-center items-center">
         {props.data.map(
           (image: { url: string, desc: string, loc: string }, i: number) => {
             return image !== undefined && (
@@ -77,55 +77,52 @@ export default function Portfolio(props: any) {
         )}
       </div>
       <div className="hidden sm:block">
-        {isOpen && (
-          <motion.nav animate={isOpen ? "open" : "closed"}>
-            <div className="fixed inset-0 flex items-center justify-center bg-[#F3EEEA]/90">
-              <Carousel
-                className="w-11/12 sm:w-3/4"
-                opts={{
-                  startIndex: currentImage,
-                  loop: true,
-                }}
-              >
-                <motion.div initial={{ y: -60 }} variants={itemVariants}>
-                  <div className="flex justify-end">
-                    <motion.svg
-                      className="h-8 cursor-pointer duration-200 hover:scale-125 hover:duration-200"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      onClick={() => setIsOpen(!isOpen)}
+        {isOpen && !isMobile && (
+          <motion.nav animate={isOpen ? "open" : "closed"} className="fixed inset-0 flex items-center justify-center bg-[#F3EEEA]/90">
+            <Carousel
+              opts={{
+                startIndex: currentImage,
+                loop: true,
+              }}
+            >
+              <motion.div initial={{ y: -60 }} variants={itemVariants} className="md:max-w-3xl lg:max-w-3xl xl:max-w-5xl 2xl:max-w-6xl 3xl:max-w-[100rem] 4xl:max-w-[110rem]">
+                <div className="flex justify-end">
+                  <motion.svg
+                    className="h-8 cursor-pointer duration-200 hover:scale-125 hover:duration-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    onClick={() => setIsOpen(!isOpen)}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </motion.svg>
+                </div>
+                <CarouselContent>
+                  {Array.from({ length: props.data.length }).map((_, index) => (
+                    <CarouselItem
+                      key={index}
+                      className="flex flex-col items-center justify-center"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </motion.svg>
-                  </div>
-                  <CarouselContent>
-                    {Array.from({ length: props.data.length }).map((_, index) => (
-                      <CarouselItem
-                        className="flex flex-col space-y-0 items-center justify-center p-1"
-                        key={index}
-                      >
-                        <CardContent>
-                          <motion.img src={props.data[index].url} />
-                        </CardContent>
-                        <div className="flex flex-col text-wrap text-center items-center justify-center">
-                          <p className="text-s">{props.data[index].desc}</p>
-                          <p className="text-xs">{props.data[index].loc}</p>
-                        </div>
+                      <CardContent >
+                        <motion.img src={props.data[index].url} />
+                      </CardContent>
+                      <div className="flex flex-col text-wrap text-center items-center justify-center">
+                        <p className="text-s">{props.data[index].desc}</p>
+                        <p className="text-xs">{props.data[index].loc}</p>
+                      </div>
 
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious />
-                  <CarouselNext />
-                </motion.div>
-              </Carousel>
-            </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </motion.div>
+            </Carousel>
           </motion.nav>
         )}
       </div>

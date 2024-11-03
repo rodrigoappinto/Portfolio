@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function SideBar() {
   return (
     <div>
-      <div className="fixed flex h-12 w-full items-center justify-center gap-x-5 bg-[#F3EEEA] pt-1 sm:hidden">
+      <div className="z-99 fixed flex h-12 w-full items-center justify-center gap-x-5 bg-[#F3EEEA] pt-1 sm:hidden">
         <Link href="/PortfolioPage">
           <SideBarButton name="PoRtFoLio" />
         </Link>

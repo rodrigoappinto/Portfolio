@@ -14,12 +14,16 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1700px",
       },
     },
     extend: {
       fontFamily: {
         majorMono: ["var(--font-major)"],
+      },
+      screens: {
+        "3xl": "2000px",
+        "4xl": "3000px",
       },
       keyframes: {
         "accordion-down": {

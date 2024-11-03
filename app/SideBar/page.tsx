@@ -8,7 +8,7 @@ export default function SideBar() {
   const router = useRouter();
 
   return (
-    <div className="sticky top-0 hidden h-screen w-1/6 min-w-36 justify-center gap-y-0 sm:visible sm:flex">
+    <div className="sticky top-0 hidden h-screen max-w-96 min-w-36 justify-center gap-y-0 sm:visible sm:flex">
       <div className="w-1/8">
         <Link href="/">
           <div

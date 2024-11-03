@@ -36,7 +36,7 @@ export default function RootLayout({
       </head>
       <body>
         <div className={`${majorMono.variable}`}>
-          <div className="flex select-none flex-col bg-[#F3EEEA] font-majorMono text-[#776B5D] sm:flex sm:flex-row">
+          <div className="z-0 flex select-none flex-col bg-[#F3EEEA] font-majorMono text-[#776B5D] sm:flex-row">
             <SmallSideBar />
             <SideBar />
             <Suspense fallback={<Loading />}>{children}</Suspense>

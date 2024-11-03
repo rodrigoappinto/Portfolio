@@ -1,11 +1,8 @@
 export default function PorfolioItem(props: any) {
-  // console.log(props.data)
   return (
-    <div className="flex">
       <img
-        className="z-0 w-[30rem] duration-200 hover:scale-[1.01] hover:opacity-90 hover:duration-200 sm:h-auto lg:h-[20rem] "
+        className="w-full lg:max-w-[20rem] 2xl:max-w-[25rem] 3xl:min-w-[46rem] h-auto aspect-[3/2] object-cover duration-200 hover:scale-[1.01] hover:opacity-90 hover:duration-200"
         src={props.url}
       />
-    </div>
   );
 }
