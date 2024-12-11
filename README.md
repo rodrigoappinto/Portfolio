@@ -4,8 +4,6 @@ Hello Everyone!
 My name is Rodrigo Pinto, I am a AI/ML Engineer that loves to do Landscape/Human Nature photography for a hobby! 🏔️ 📷 🌳
 I developed this portfolio in order to showcase my work to family, friends and, now that is live, also all of you! 😄
 
-<img src="app/icon.jpg" width="250" height="200">
-
 ### In the case you would like to replicate it for your own use case, feel free to use my code!
 
 This project was developed utilizing cutting-edge technologies for web development. For both the frontend and backend, Next.js 14 and Tailwind were employed. Firebase was additionally chosen as the main database for photo storage. The project was ultimately deployed on Vercel, ensuring a fast and handi real-time deployments when commiting to production on Github.
