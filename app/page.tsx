@@ -19,6 +19,10 @@ export default function WelcomingPage() {
       <motion.div className="absolute bottom-5 animate-pulse">
       <DownArrow />
       </motion.div>
+      <motion.div className="absolute top-5">
+      <p>Pinto DiGitAL JouRnAL</p>
+      </motion.div>
+
       <motion.div className="flex items-center justify-center">
         <motion.div
           className="text-right text-4xl sm:text-7xl lg:text-9xl"
