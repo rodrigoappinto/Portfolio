@@ -1,8 +1,9 @@
 "use client";
 
+import RunningLogo from "./Components/RunningLogo";
+import DownArrow from "./Components/DownArrow";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import RunningLogo from "./Components/RunningLogo";
 
 export default function WelcomingPage() {
   const constraintsRef = useRef(null);
@@ -12,8 +13,11 @@ export default function WelcomingPage() {
       className="flex h-screen w-screen flex-col items-center justify-center"
       ref={constraintsRef}
     >
-      <motion.div className="absolute bottom-5">
-        <RunningLogo/>
+      <motion.div className="absolute bottom-16">
+        <RunningLogo />
+      </motion.div>
+      <motion.div className="absolute bottom-5 animate-pulse">
+      <DownArrow />
       </motion.div>
       <motion.div className="flex items-center justify-center">
         <motion.div
@@ -26,7 +30,7 @@ export default function WelcomingPage() {
         </motion.div>
       </motion.div>
       <motion.div
-        className="text-center text-sm sm:text-base lg:text-xl"
+        className="text-center text-sm sm:text-base lg:text-xl mt-2"
         drag
         dragConstraints={constraintsRef}
         dragTransition={{ bounceStiffness: 100, bounceDamping: 10 }}

@@ -22,7 +22,7 @@ export default async function PortfolioPage() {
       <div className="mt-10 flex flex-wrap items-center justify-center px-2 sm:mt-4">
         <Portfolio data={data} />
       </div>
-      <div className="mx-6 my-3 flex items-center justify-between gap-2 text-center sm:text-base text-xs ">
+      <div className="mx-6 my-3 flex items-center justify-between gap-2 text-center sm:text-base text-xs">
         <p>(:</p>
         <p>Proudly created by myself for my family, and friends!</p>
         <p>:)</p>

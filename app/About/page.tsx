@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
 
-export default function page() {
+export default function About() {
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center p-3 text-center text-sm sm:h-screen sm:text-xl">
+    <div className="flex h-screen w-screen flex-col items-center justify-center p-3 text-center text-sm sm:h-screen sm:text-xl ">
       <p> !hello!</p>
       <p>
         I aM a coMputer science engineer Majored in Artificial intelligence with

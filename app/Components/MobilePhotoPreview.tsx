@@ -2,7 +2,7 @@ export default function MobilePorfolioItem(props: any) {
     return (
         <div className="relative flex">
             <img
-                className="w-full duration-200 opacity-10 hover:duration-200 hover:z-0"
+                className="w-full aspect-[3/2] duration-200 opacity-10 hover:duration-200 hover:z-0"
                 src={props.url}
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center">

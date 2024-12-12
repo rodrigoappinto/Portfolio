@@ -1,8 +1,11 @@
 import { Analytics } from "@vercel/analytics/react";
 import SmallSideBar from "./SmallSideBar/page";
+import WelcomingPage from "./page";
+import PortfolioPage from "./PortfolioPage/page";
 import localFont from "@next/font/local";
 import SideBar from "./SideBar/page";
 import { Suspense } from "react";
+import About from "./About/page";
 import Loading from "./loading";
 import "./globals.css";
 
@@ -36,10 +39,13 @@ export default function RootLayout({
       </head>
       <body>
         <div className={`${majorMono.variable}`}>
-          <div className="z-0 flex select-none flex-col bg-[#F3EEEA] font-majorMono text-[#776B5D] sm:flex-row">
-            <SmallSideBar />
-            <SideBar />
-            <Suspense fallback={<Loading />}>{children}</Suspense>
+          <div className="h-full w-full font-majorMono text-[#776B5D] bg-[#F3EEEA] overflow-auto">
+            <WelcomingPage />
+            <PortfolioPage />
+            <About />
+            {/* <SmallSideBar /> */}
+            {/* <SideBar /> */}
+            {/* <Suspense fallback={<Loading />}>{children}</Suspense> */}
             <Analytics />
           </div>
         </div>
