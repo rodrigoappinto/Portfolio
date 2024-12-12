@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import RunningLogo from "./Components/RunningLogo";
 
 export default function WelcomingPage() {
   const constraintsRef = useRef(null);
@@ -11,6 +12,9 @@ export default function WelcomingPage() {
       className="flex h-screen w-screen flex-col items-center justify-center"
       ref={constraintsRef}
     >
+      <motion.div className="absolute bottom-5">
+        <RunningLogo/>
+      </motion.div>
       <motion.div className="flex items-center justify-center">
         <motion.div
           className="text-right text-4xl sm:text-7xl lg:text-9xl"

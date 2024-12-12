@@ -16,7 +16,7 @@ export default function SideBar() {
             onClick={() => router.refresh()}
             className="flex flex-col mt-14 items-center align-middle"
           >
-            <IconLogo width="20%"/>
+            <IconLogo width="18%"/>
             <div className="w-fit justify-center p-2 text-center">
               Pinto Digital Journal
             </div>
