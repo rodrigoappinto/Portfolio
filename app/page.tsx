@@ -16,11 +16,13 @@ export default function WelcomingPage() {
       <motion.div className="absolute bottom-16">
         <RunningLogo />
       </motion.div>
+
       <motion.div className="absolute bottom-5 animate-pulse">
-      <DownArrow />
+        <DownArrow />
       </motion.div>
+
       <motion.div className="absolute top-5">
-      <p>Pinto DiGitAL JouRnAL</p>
+        <p>Pinto DiGitAL JouRnAL</p>
       </motion.div>
 
       <motion.div className="flex items-center justify-center">
