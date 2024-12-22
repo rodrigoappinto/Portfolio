@@ -2,7 +2,6 @@ import { db } from "../db/firebase";
 import Portfolio from "../Components/Portfolio";
 import { collection, getDocs } from 'firebase/firestore';
 
-export const dynamic = 'force-dynamic';
 export default async function PortfolioPage() {
   let data = [];
 
@@ -16,9 +15,8 @@ export default async function PortfolioPage() {
   };
 
   data = await fetchData();
-  console.log(data)
   return (
-    <div className="h-full w-full">
+    <div id="portfolio" className="h-full w-full">
       <div className="mt-10 flex flex-wrap items-center justify-center px-2 sm:mt-4">
         <Portfolio data={data} />
       </div>

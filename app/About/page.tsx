@@ -63,7 +63,7 @@ export default function About() {
       </div>
       <div className="absolute flex flex-col bottom-3 justify-center items-center">
         <CamearaManLogo width="15%" />
-        <div className="m-6 flex items-center justify-between gap-2 text-center sm:text-base text-xs">
+        <div className="m-6 flex items-center justify-between gap-2 text-center sm:text-sm text-xs">
           <p>(:</p>
           <p>Proudly created by myself for my family, and friends!</p>
           <p>:)</p>

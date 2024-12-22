@@ -5,8 +5,14 @@ import DownArrow from "./Components/DownArrow";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 
+
 export default function WelcomingPage() {
   const constraintsRef = useRef(null);
+
+  const scrollToSection = (index: number) => {
+    const section = document.getElementById("portfolio");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <motion.div
@@ -16,8 +22,8 @@ export default function WelcomingPage() {
       <motion.div className="absolute bottom-16">
         <RunningLogo />
       </motion.div>
-
-      <motion.div className="absolute bottom-5 animate-pulse">
+  
+      <motion.div className="absolute bottom-5 animate-pulse" onClick={() => scrollToSection(0)}>
         <DownArrow />
       </motion.div>
 

@@ -39,7 +39,7 @@ export default function RootLayout({
       </head>
       <body>
         <div className={`${majorMono.variable}`}>
-          <div className="h-full w-full select-none	 font-majorMono text-[#776B5D] bg-[#F3EEEA]">
+          <div className="h-full w-full select-none	font-majorMono text-[#776B5D] bg-[#F3EEEA]">
             <WelcomingPage />
             <PortfolioPage />
             <About />
