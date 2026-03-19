@@ -3,7 +3,7 @@
 import RunningLogo from "./Components/RunningLogo";
 import DownArrow from "./Components/DownArrow";
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 
 export default function WelcomingPage() {
