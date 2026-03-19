@@ -4,7 +4,7 @@ import CamearaManLogo from "../Components/CameraMan";
 
 export default function About() {
   return (
-    <div className="flex h-screen relative w-screen flex-col items-center justify-center p-3 text-center text-sm sm:text-xl">
+    <div className="flex h-screen relative w-full flex-col items-center justify-center p-3 text-center text-sm sm:text-xl">
       <div>
         <p> !hello!</p>
         <p>

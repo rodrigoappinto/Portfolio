@@ -16,7 +16,7 @@ export default function WelcomingPage() {
 
   return (
     <motion.div
-      className="flex h-screen w-screen flex-col items-center justify-center"
+      className="flex h-screen w-full flex-col items-center justify-center"
       ref={constraintsRef}
     >
       <motion.div className="absolute bottom-16">
