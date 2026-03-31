@@ -1,6 +1,6 @@
 "use client";
-import { Card, CardContent } from "@/components/ui/card";
-import React, { useEffect, useState } from "react";
+import { CardContent } from "@/components/ui/card";
+import { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import PhotoPreview from "./PhotoPreview";
 import MobilePhotoPreview from "./MobilePhotoPreview";
@@ -21,12 +21,20 @@ const itemVariants: Variants = {
   },
 };
 
-export default function Portfolio(props: any) {
+interface PortfolioImage {
+  url: string;
+  desc: string;
+  loc: string;
+}
+
+interface PortfolioProps {
+  data: PortfolioImage[];
+}
+
+export default function Portfolio({ data }: PortfolioProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(-1);
   const [isMobile, setIsMobile] = useState(false);
-
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,8 +45,7 @@ export default function Portfolio(props: any) {
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
-  }, [isMobile]);
-
+  }, []);
 
   useEffect(() => {
     if (isOpen && !isMobile) {
@@ -52,28 +59,31 @@ export default function Portfolio(props: any) {
     };
   }, [isOpen, isMobile]);
 
+  const handleImageClick = (index: number) => {
+    if (isMobile) {
+      if (currentImage === index) {
+        setIsOpen(false);
+        setCurrentImage(-1);
+      } else {
+        setCurrentImage(index);
+      }
+    } else {
+      setIsOpen(!isOpen);
+      setCurrentImage(index);
+    }
+  };
 
   return (
     <div className="my-5">
       <div className="flex flex-wrap gap-2 justify-center items-center">
-        {props.data.map(
-          (image: { url: string, desc: string, loc: string }, i: number) => {
-            return image !== undefined && (
-              <div
-                key={i}
-                onClick={() => {
-                  if (isMobile && (currentImage === i)) { setIsOpen(!isOpen); setCurrentImage(-1); }
-                  else if (isMobile && (currentImage !== i)) { setCurrentImage(i); }
-                  else if (!isMobile && (currentImage === i)) { setIsOpen(!isOpen); setCurrentImage(i); }
-                  else { setIsOpen(!isOpen); setCurrentImage(i); }
-                }}
-              >
-                {!isMobile && <PhotoPreview url={image.url} />}
-                {isMobile && currentImage === i && <MobilePhotoPreview url={image.url} desc={image.desc} loc={image.loc} />}
-                {isMobile && currentImage !== i && <PhotoPreview url={image.url} />}
-              </div>
-            );
-          }
+        {data.map((image, i) =>
+          image !== undefined && (
+            <div key={i} onClick={() => handleImageClick(i)}>
+              {!isMobile && <PhotoPreview url={image.url} priority={i < 4} />}
+              {isMobile && currentImage === i && <MobilePhotoPreview url={image.url} desc={image.desc} loc={image.loc} />}
+              {isMobile && currentImage !== i && <PhotoPreview url={image.url} priority={i === 0} />}
+            </div>
+          )
         )}
       </div>
       <div className="hidden sm:block">
@@ -92,7 +102,7 @@ export default function Portfolio(props: any) {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    onClick={() => setIsOpen(!isOpen)}
+                    onClick={() => setIsOpen(false)}
                   >
                     <path
                       strokeLinecap="round"
@@ -103,19 +113,18 @@ export default function Portfolio(props: any) {
                   </motion.svg>
                 </div>
                 <CarouselContent>
-                  {Array.from({ length: props.data.length }).map((_, index) => (
+                  {data.map((image, index) => (
                     <CarouselItem
                       key={index}
                       className="flex flex-col items-center justify-center"
                     >
-                      <CardContent >
-                        <motion.img src={props.data[index].url} />
+                      <CardContent>
+                        <motion.img src={image.url} />
                       </CardContent>
                       <div className="flex flex-col text-wrap text-center items-center justify-center">
-                        <p className="text-s">{props.data[index].desc}</p>
-                        <p className="text-xs">{props.data[index].loc}</p>
+                        <p className="text-s">{image.desc}</p>
+                        <p className="text-xs">{image.loc}</p>
                       </div>
-
                     </CarouselItem>
                   ))}
                 </CarouselContent>

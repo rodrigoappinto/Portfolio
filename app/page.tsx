@@ -9,7 +9,7 @@ import { useRef } from "react";
 export default function WelcomingPage() {
   const constraintsRef = useRef(null);
 
-  const scrollToSection = (index: number) => {
+  const scrollToPortfolio = () => {
     const section = document.getElementById("portfolio");
     section?.scrollIntoView({ behavior: "smooth" });
   };
@@ -23,7 +23,7 @@ export default function WelcomingPage() {
         <RunningLogo />
       </motion.div>
   
-      <motion.div className="absolute bottom-5 animate-pulse" onClick={() => scrollToSection(0)}>
+      <motion.div className="absolute bottom-5 animate-pulse cursor-pointer" onClick={scrollToPortfolio}>
         <DownArrow />
       </motion.div>
 

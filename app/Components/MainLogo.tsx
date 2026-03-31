@@ -1,4 +1,4 @@
-const IconLogo = ({ width = "100%", height = "auto" }) => (
+const IconLogo = ({ width = "100%", height = "100%" }) => (
 <svg id="Layer_2" width={width} height={height} data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166.99 294.86">
   <defs>
     <style>

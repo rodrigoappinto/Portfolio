@@ -1,5 +1,5 @@
-const CamearaManLogo = ({ width = "100%", height = "auto" }) => (
-    <svg id="CamearaManLogo" width={width} height={height} data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.62 133.52">
+const CameraManLogo = ({ width = "100%", height = "100%" }) => (
+    <svg id="CameraManLogo" width={width} height={height} data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.62 133.52">
         <defs>
             <style>
                 {`
@@ -34,7 +34,7 @@ const CamearaManLogo = ({ width = "100%", height = "auto" }) => (
     `}
             </style>
         </defs>
-        <g id="CamearaManLogo" data-name="Layer 3">
+        <g id="CameraManLogo" data-name="Layer 3">
             <g>
                 <path className="cls-1" d="M70.98,110.82c-4.48,2.91-10.28,4.65-14.67,4.65s-10.23-1.74-14.67-4.65c-2.52-1.65-4.12-3.55-5.04-5.58-4.13-9.08,4.42-19.83,5.04-20.58,3.4-4.1,7.53-6.41,10.8-7.72,2.49-1,5.26-.99,7.74.03,3.3,1.36,7.37,3.69,10.8,7.7,1.21,1.41,15.19,16.29,0,26.16Z" />
                 <line className="cls-6" x1="38.21" y1="10.96" x2="41.87" y2="15.01" />
@@ -58,4 +58,4 @@ const CamearaManLogo = ({ width = "100%", height = "auto" }) => (
     </svg>
 );
 
-export default CamearaManLogo;
+export default CameraManLogo;
